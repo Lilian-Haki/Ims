@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<link rel="stylesheet" href="/static/login.css">
+		<title>Sign In</title>
+	
+	</head>
+	<body>
+		<div class="container">
+			<div class="forms-container">
+			  <div class="signin-signup">
+					<form action="./register" method="post" autocomplete="off">
+						<h2 class="title">Register</h2>
+						<div class="input-field">
+							<i class="fas fa-user"></i>
+							<input type="text" placeholder="Username" input type="text" name="username" id="username" required>
+						  </div>
+						  <div class="input-field">
+							<i class="fas fa-lock"></i>
+							<input type="password" name="password" placeholder="Password" id="password" required>
+						  </div>
+						  <div class="input-field">
+							<i class="fas fa-envelope"></i>
+							<input type="email" name="email" placeholder="Email" id="email" required>
+						  </div>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Register" class="btn solid" >
+				<div class="links">
+					<a href="/login" class="active"  id="sign-up-btn">Back to Login</a>
+				</div>				
+			</form>
+				
+			  </div>
+			</div>
+			</div>
+			<div class="panels-container">
+				<div class="panel left-panel">
+				  <div class="content">
+					<h3>New Here?!</h3>
+					<p>
+					  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
+					  ex ratione. Aliquid!
+					</p>
+				  </div>
+				</div>
+			  </div>
+		  
+		
+		<script src="app.js"></script>
+	</body>
+</html>

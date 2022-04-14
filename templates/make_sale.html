@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/CSS/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <script src="https://use.fontawesome.com/78bab9acb2.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">            
+
+    <title> Sales </title>
+
+    <link rel="stylesheet" href="/static/styleee.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/datatables.css">
+  </head>
+  <body>
+    <div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+	        <ul class="list-unstyled components mb-5">
+	          <li>
+	            <a href="/">Home</a>
+	           
+	          </li>
+	          <li>
+	              <a href="/dashboard">Dashboard</a>
+	          </li>
+	          <li>
+              <a href="/products">Products</a>
+              
+	          </li>
+	          <li>
+              <a href="/sales">Sales</a>
+	          </li>
+	          <li>
+              <a href="#">Contact</a>
+	          </li>
+	        </ul>
+
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.--></p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+      <div id="content" class="p-4 p-md-3">
+    
+        
+        
+            
+            <!-- inventory table -->
+       <!--class = display and id = table_id for datatable plugin -->
+      <table class="content-table" id="table_id">
+        <thead>
+          <tr>
+            <!-- <th scope="col">#</th> -->
+            <th scope="col">ID</th>
+            <th scope="col">PID</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Created At</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          
+          {% for i in data: %}
+          <tr> 
+            <!-- <th scope="row"> 1 </th> -->
+            <td> {{i[0]}} </td>
+            <td> {{i[1]}} </td>
+            <td> {{i[2]}} </td>
+            <td> {{i[3]}} </td>
+            <td>
+                
+     
+<!-- Modals end -->
+            </td>
+          </tr>
+{%endfor%}
+         
+     
+<!-- sidebar end -->
+  <!-- Button trigger modal -->
+      <!-- Delete Button trigerring modal --
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#DeleteModal2">
+        <i class="fa fa-trash"></i>
+        </button>
+         <!-- Delete Modal --
+<div class="modal fade" id="DeleteModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form action="/delete_inventory/2" method="POST"> 
+        <div class="form-group">
+          <label for="exampleInputPassword1">Product Name: Milk  </label>
+          <input type="text" class="form-control" id="exampleInputPassword1" value="2" name="id">
+        </div>
+      Are you sure you want to delete!!!
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary">Save changes</button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Modals end -->
+        </tbody>
+      </table>  
+      </div>
+    </div>        
+      </div>
+    </div>
+  </div>
+</div>
+    
+         <!-- datatables -->
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+ <script>
+   $(document).ready( function () {
+     $('#table_id').DataTable();
+ } );
+ </script>    
+   
+  </body>
+</html>
