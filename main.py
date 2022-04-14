@@ -14,9 +14,9 @@ cur = conn.cursor()
 # create a home route
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:lilian@localhost:5432/duka'
 app.config["SECRET_KEY"] = "#lilian@haki"
-conn = psycopg2.connect(user="postgres", password="lilian",
-                        host="localhost", port="5432", database="duka")
-
+#conn = psycopg2.connect(user="postgres", password="lilian",
+                       # host="localhost", port="5432", database="duka")
+conn=psycopg2.connect(user="yboqdmsdivfvgh",password="1be222aeff0b13191db8bbc25e690ec91797b2e8e0519a278930d8a0e8277ff7",host="ec2-99-80-170-190.eu-west-1.compute.amazonaws.com",port="5432",database="d2vjec0pm2lm8f")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
