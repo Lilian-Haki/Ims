@@ -1,1 +1,1 @@
-web: bundle exec thin start -p $PORT
+web: gunicorn --bind :$PORT --timeout 0 main:flask_app
