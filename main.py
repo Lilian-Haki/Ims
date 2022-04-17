@@ -128,7 +128,6 @@ def products():
     else:
         cur.execute("select * from products")
         data = cur.fetchall()
-        print(data)
         return render_template("products.html", data=data)
 
 
