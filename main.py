@@ -12,8 +12,8 @@ conn=psycopg2.connect(user="zbgesovjbfrlda",password="7247fc832cd35ab82a8756f324
 cur = conn.cursor()
 
 cur.execute("CREATE TABLE IF NOT EXISTS products (id serial PRIMARY KEY,name VARCHAR(100),buying_price INT,selling_price INT,stock_quantity INT);")
-cur.execute("CREATE TABLE IF NOT EXISTS sales (id serial PRIMARY KEY,pid INT, quantity INT, created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW() );")
-cur.execute("CREATE TABLE IF NOT EXISTS login (id serial PRIMARY KEY,username VARCHAR(50), email VARCHAR(50),password VARCHAR(15) );")
+cur.execute("CREATE TABLE IF NOT EXISTS sales (id serial PRIMARY KEY,pid INT NOT NULL, quantity INT, created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW() );")
+cur.execute("CREATE TABLE IF NOT EXISTS login (id serial PRIMARY KEY,username VARCHAR(50) NOT NULL, email VARCHAR(50) NOT NULL,password VARCHAR(15) NOT NULL);")
 conn.commit()
 # create a home route
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:lilian@localhost:5432/duka'
