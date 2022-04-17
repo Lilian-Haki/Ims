@@ -7,7 +7,7 @@ app = Flask(__name__)
 # connect to an existing database
 #conn = psycopg2.connect(user="postgres", password="lilian",
                         #host="localhost", port="5432", database="duka")
-conn=psycopg2.connect(user="yboqdmsdivfvgh",password="1be222aeff0b13191db8bbc25e690ec91797b2e8e0519a278930d8a0e8277ff7",host="ec2-99-80-170-190.eu-west-1.compute.amazonaws.com",port="5432",database="d2vjec0pm2lm8f")
+conn=psycopg2.connect(user="zbgesovjbfrlda",password="7247fc832cd35ab82a8756f3244e6dd15e622705e6d0c5c753548a0886c80b59",host="ec2-99-81-137-11.eu-west-1.compute.amazonaws.com",port="5432",database="dckkmj8bg4akmc")
 # create a cursor to perform database operation
 cur = conn.cursor()
 
@@ -16,7 +16,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:lilian@localhost:
 app.config["SECRET_KEY"] = "#lilian@haki"
 #conn = psycopg2.connect(user="postgres", password="lilian",
                        # host="localhost", port="5432", database="duka")
-conn=psycopg2.connect(user="yboqdmsdivfvgh",password="1be222aeff0b13191db8bbc25e690ec91797b2e8e0519a278930d8a0e8277ff7",host="ec2-99-80-170-190.eu-west-1.compute.amazonaws.com",port="5432",database="d2vjec0pm2lm8f")
+conn=psycopg2.connect(user="zbgesovjbfrlda",password="7247fc832cd35ab82a8756f3244e6dd15e622705e6d0c5c753548a0886c80b59",host="ec2-99-81-137-11.eu-west-1.compute.amazonaws.com",port="5432",database="dckkmj8bg4akmc")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
