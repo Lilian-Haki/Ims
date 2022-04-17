@@ -46,12 +46,12 @@ def login():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        user_name = request.form["username"]
+        username = request.form["username"]
         password = request.form["password"]
         email = request.form["email"]
         cur.execute(
             "INSERT INTO login (username,password,email) VALUES(%s,%s,%s)",
-            (user_name, password, email),
+            (username, password, email),
         )
         conn.commit()
         return redirect("/login")
