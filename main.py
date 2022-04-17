@@ -88,10 +88,10 @@ def view_sales(pid):
 @app.route("/dashboard", methods=["GET", "POST"])
 def dashboard():
     cur.execute("select count(id) from products")
-    data = cur.fetchone()
+    data = cur.fetchall()
     print(data)
     cur.execute("select count(id) from sales")
-    dataa = cur.fetchone()
+    dataa = cur.fetchall()
     print(dataa)
     cur.execute("""select sum((products.selling_price-products.buying_price)*sales.quantity) as profit, products.name from sales 
         join products on products.id=sales.pid
